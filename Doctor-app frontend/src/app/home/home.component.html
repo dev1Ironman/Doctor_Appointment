@@ -1,0 +1,28 @@
+<div class="header">
+  <mat-card  class="card-profile">Doctor's Name</mat-card>
+  <!-- <mat-card class="card-profile">{{today}}
+  <input matInput [matDatepicker]="picker" formControlName="date">
+  <mat-datepicker-toggle matSuffix  [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-card> -->
+<mat-form-field class="example-full-width">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" (dateChange)="onSelect($event)" >
+  <mat-datepicker-toggle matSuffix  [for]="picker" (selectedChange)="onSelect($event)"></mat-datepicker-toggle>
+  <mat-datepicker #picker (selectedChange)="onSelect($event)"></mat-datepicker>
+</mat-form-field>
+  <button class="btn-header" mat-raised-button>Walk-ins</button>
+  <button class="btn-header" mat-raised-button [routerLink]="['/appointment']">Appointments</button>
+</div>
+<!-- <mat-card class=" table-card mat-elevation-z8"> -->
+
+  <mat-table #table [dataSource]="dataSource" class=" table-card mat-elevation-z8" >
+      <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
+        <mat-header-cell *matHeaderCellDef > {{column.value}}</mat-header-cell>
+        <mat-cell *matCellDef="let element; let i = index"><span *ngIf="(column.id == 'position')"> {{i+1}}</span> <span *ngIf="(column.id != 'position' && column.id != 'date')"> {{element[column.id]}}</span><span *ngIf="(column.id == 'date')">{{element[column.id] | date}} </span></mat-cell>
+      </ng-container>
+    
+      <mat-header-row class="header-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  <!-- </mat-card> -->

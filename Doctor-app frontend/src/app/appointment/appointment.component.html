@@ -1,0 +1,39 @@
+
+<div class="header"> Appointments <span class="link">Home > Appointments</span></div>
+
+          <mat-card class=" calender mat-elevation-z8">
+            <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+          </mat-card> 
+       
+            <mat-card class=" time mat-elevation-z8">
+                <button class="btn-header" mat-raised-button (click)="openSlot()">Add Slot</button>
+                <div>
+                    Morning
+                    <div>9:00 AM to 12:00 PM</div>
+
+                    <div>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time1)?'primary':''">9:00 AM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time2)?'primary':''">9:30 AM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time3)?'primary':''">10:00 AM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time4)?'primary':''">10:30 AM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time5)?'primary':''">11:00 AM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time6)?'primary':''">11:30 AM</button>
+                    </div>
+                </div>
+                <div>
+                    Evening
+                    <div>5:00 PM to 9:00 PM</div>
+                    <div>
+                        <button class="time-slot" mat-raised-button [color]="(timeslot?.time7)?'primary':''">5:00 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time8)?'primary':''">5:30 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time9)?'primary':''">6:00 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time10)?'primary':''">6:30 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time11)?'primary':''">7:00 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time12)?'primary':''">7:30 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time13)?'primary':''">8:00 PM</button>
+                        <button class="time-slot"  mat-raised-button [color]="(timeslot?.time14)?'primary':''">8:30 PM</button>
+                    </div>
+                </div>
+                
+            </mat-card>
+       

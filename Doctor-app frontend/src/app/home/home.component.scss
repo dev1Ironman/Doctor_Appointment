@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+  }
+
+.header {
+  height: 4rem;
+  background-color: #fafafa;
+}
+
+.table-card {
+  width: 80%;
+  margin-left: 8%;
+  margin-top: 3rem;
+}
+.header-row {
+  background-color: #7495f3;
+}
+
+.btn-header {
+  float: right;
+  margin: 14px;
+  color: blue;
+  border-radius: 22px;
+  width: 11rem;
+}
+.card-profile {
+  float: left;
+    margin: 8px;
+    height: 11px;
+    text-align: center;
+}
+html {background-color: black}
